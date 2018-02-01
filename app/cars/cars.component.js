@@ -3,11 +3,11 @@ angular.module('fourWheels').component('cars', {
     controllerAs: 'carsCtrl',
 
     controller: function (carsSrvc) {
-        this.cars = carsSrvc.cars
+        this.cars = carsSrvc.getCars()
 
         this.buyCar = function (id) {
-            carsSrvc.buyCar(id)
-            this.cars = carsSrvc.cars
-        }
+            carsSrvc.buyCar(id);
+            this.cars = carsSrvc.getCars()
+        };
     }
-})
+});
